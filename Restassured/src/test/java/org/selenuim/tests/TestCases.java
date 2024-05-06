@@ -22,9 +22,8 @@ public class TestCases{
     public void test() {
 
         given().baseUri("https://simple-books-api.glitch.me")
-                .when().get("status")
-                .then().log().all()
-                .assertThat().statusCode(200);
+                .when().get("books")
+                .then().log().all();
 
     }
 

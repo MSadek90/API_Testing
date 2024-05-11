@@ -21,20 +21,18 @@ public class TestCases{
     @Test
     public void test() {
 
-        HashMap<String, String> body = new HashMap<>();
-		
-        body.put("clientName","Postman");
-        body.put("clientEmail","valentin@example.com");
-		
+        POJOClass pojoClass = new POJOClass("Postman","valentin@example.com");
+
         given().
-		        baseUri("https://simple-books-api.glitch.me").
-				contentType(ContentType.JSON).
-                body(body).
+                baseUri("https://simple-books-api.glitch.me").
+                contentType(ContentType.JSON).
+                body(pojoClass).
                 log().all().
         when().
                 post("/api-clients/").
         then().
                 log().all();
+
 
     }
 

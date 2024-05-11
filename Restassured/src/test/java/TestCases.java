@@ -21,17 +21,18 @@ public class TestCases{
     @Test
     public void test() {
 
-        HashMap<String, String> queries = new HashMap<>();
+        HashMap<String, String> body = new HashMap<>();
 		
-        queries.put("type","fiction");
-        queries.put("limit","2");
+        body.put("clientName","Postman");
+        body.put("clientEmail","valentin@example.com");
 		
         given().
 		        baseUri("https://simple-books-api.glitch.me").
-                queryParams(queries).
+				contentType(ContentType.JSON).
+                body(body).
                 log().all().
         when().
-                get("books").
+                post("/api-clients/").
         then().
                 log().all();
 

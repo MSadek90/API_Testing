@@ -21,9 +21,19 @@ public class TestCases{
     @Test
     public void test() {
 
-        given().baseUri("https://simple-books-api.glitch.me")
-                .when().get("books")
-                .then().log().all();
+        HashMap<String, String> queries = new HashMap<>();
+		
+        queries.put("type","fiction");
+        queries.put("limit","2");
+		
+        given().
+		        baseUri("https://simple-books-api.glitch.me").
+                queryParams(queries).
+                log().all().
+        when().
+                get("books").
+        then().
+                log().all();
 
     }
 

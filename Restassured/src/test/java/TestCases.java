@@ -21,17 +21,20 @@ public class TestCases{
     @Test
     public void test() {
 
-        POJOClass pojoClass = new POJOClass("Postman","valentin@example.com");
+        POJOClass pojoClass = new POJOClass(1,"ali");
 
-        given().
-                baseUri("https://simple-books-api.glitch.me").
-                contentType(ContentType.JSON).
-                body(pojoClass).
-                log().all().
-        when().
-                post("/api-clients/").
-        then().
-                log().all();
+
+               given()
+                       .baseUri("https://simple-books-api.glitch.me").
+                        auth().oauth2("36c898d32e9168d7b3e128640b334da6c0f3e682026810085751091c6500dc1f").
+                        contentType(ContentType.JSON).
+                        body(pojoClass).
+                when()
+
+                        .post("/orders").
+                then()
+                       .log().all();
+
 
 
     }

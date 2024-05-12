@@ -1,28 +1,30 @@
 package Org.selenuim.pom.tests;
 
 public class POJOClass {
-    private String clientName;
-
-    public POJOClass(String clientName, String clientEmail) {
-        this.clientName = clientName;
-        this.clientEmail = clientEmail;
+    public POJOClass(int  bookId, String customerName) {
+        this.bookId = bookId;
+        this.customerName = customerName;
     }
 
-    private String clientEmail;
+    private int  bookId;
 
-    public String getClientName() {
-        return clientName;
+
+
+    private String customerName;
+
+    public int getBookId() {
+        return bookId;
     }
 
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
     }
 
-    public String getClientEmail() {
-        return clientEmail;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setClientEmail(String clientEmail) {
-        this.clientEmail = clientEmail;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 }

@@ -21,18 +21,14 @@ public class TestCases{
     @Test
     public void test() {
 
-          POJOClass pojoClass = new POJOClass("Mazen");
-
-
-               given()
+          given()
                         .baseUri("https://simple-books-api.glitch.me").
                         auth().oauth2("36c898d32e9168d7b3e128640b334da6c0f3e682026810085751091c6500dc1f").
                         pathParam("orderId","D1xfEyhkRynZP2gW01Qi8").
-                        contentType(ContentType.JSON).
-                        body(pojoClass).
+                        
                 when()
 
-                        .patch("/orders/{orderId}").
+                        .delete("/orders/{orderId}").
                 then()
                        .log().all();
 
